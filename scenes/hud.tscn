@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce7hnxms71g6s"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_1hfsf"]
+[ext_resource type="Theme" uid="uid://cany6akrotmf6" path="res://themes/theme.tres" id="1_g2bqx"]
+[ext_resource type="Texture2D" uid="uid://lho5d43bqapg" path="res://assets/ui/return.png" id="3_r37lc"]
+[ext_resource type="Texture2D" uid="uid://d4i7cd343f14h" path="res://assets/ui/exit.png" id="4_ghgyp"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1hfsf")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 601.0
+offset_right = -64.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g2bqx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxNivel" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NivelTitulo" type="Label" parent="Panel/HBoxContainer/VBoxNivel"]
+layout_mode = 2
+text = "Nivel"
+horizontal_alignment = 1
+
+[node name="Nivel" type="Label" parent="Panel/HBoxContainer/VBoxNivel"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="VBoxTiempo" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tiempo" type="Label" parent="Panel/HBoxContainer/VBoxTiempo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "##"
+horizontal_alignment = 1
+
+[node name="TiempoTitulo" type="Label" parent="Panel/HBoxContainer/VBoxTiempo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Tiempo"
+horizontal_alignment = 1
+
+[node name="VBoxMovimientos" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Movimientos" type="Label" parent="Panel/HBoxContainer/VBoxMovimientos"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "##"
+horizontal_alignment = 1
+
+[node name="MovimientosTitulo" type="Label" parent="Panel/HBoxContainer/VBoxMovimientos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Movimientos"
+horizontal_alignment = 1
+
+[node name="VBoxIntentos" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Intentos" type="Label" parent="Panel/HBoxContainer/VBoxIntentos"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "##"
+horizontal_alignment = 1
+
+[node name="IntentosTitulo" type="Label" parent="Panel/HBoxContainer/VBoxIntentos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Intentos"
+horizontal_alignment = 1
+
+[node name="Botones" type="HBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Reset" type="TextureButton" parent="Panel/HBoxContainer/Botones"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("3_r37lc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Salir" type="TextureButton" parent="Panel/HBoxContainer/Botones"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("4_ghgyp")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="LevelTimer" type="Timer" parent="Timers"]
+autostart = true
+
+[connection signal="pressed" from="Panel/HBoxContainer/Botones/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Botones/Salir" to="." method="_on_salir_pressed"]
+[connection signal="timeout" from="Timers/LevelTimer" to="." method="_on_level_timer_timeout"]

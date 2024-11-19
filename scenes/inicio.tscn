@@ -1,0 +1,218 @@
+[gd_scene load_steps=5 format=3 uid="uid://wepmyoliakqm"]
+
+[ext_resource type="Script" path="res://scripts/inicio.gd" id="1_kmwda"]
+[ext_resource type="Texture2D" uid="uid://fhpvctngwgd8" path="res://assets/backgrounds/Green.png" id="1_yr31d"]
+[ext_resource type="Theme" uid="uid://cany6akrotmf6" path="res://themes/theme.tres" id="2_67y24"]
+[ext_resource type="Texture2D" uid="uid://d06f6x8igk3fy" path="res://assets/backgrounds/Purple.png" id="3_pefub"]
+
+[node name="Inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kmwda")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.415686)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yr31d")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 140.0
+offset_top = 110.0
+offset_right = -140.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_67y24")
+
+[node name="VBoxTitulo" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxTitulo"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+
+[node name="Titulo" type="Label" parent="Panel/VBoxTitulo"]
+custom_minimum_size = Vector2(2, -1000)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.25
+theme = ExtResource("2_67y24")
+text = "Cajas"
+horizontal_alignment = 1
+
+[node name="HBoxCodigo" type="HBoxContainer" parent="Panel/VBoxTitulo"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="Codigo" type="Label" parent="Panel/VBoxTitulo/HBoxCodigo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 30
+text = "Código:  "
+horizontal_alignment = 1
+
+[node name="CodigoInput" type="LineEdit" parent="Panel/VBoxTitulo/HBoxCodigo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="HBoxNombre" type="HBoxContainer" parent="Panel/VBoxTitulo"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.31
+alignment = 1
+
+[node name="Nombre" type="Label" parent="Panel/VBoxTitulo/HBoxNombre"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 30
+text = "Nombre:  "
+horizontal_alignment = 1
+
+[node name="NombreInput" type="LineEdit" parent="Panel/VBoxTitulo/HBoxNombre"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="HBoxNiveles" type="HBoxContainer" parent="Panel/VBoxTitulo"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.24
+
+[node name="VBoxNiveles" type="VBoxContainer" parent="Panel/VBoxTitulo/HBoxNiveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TituloNiveles" type="Label" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 30
+text = "Niveles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxNiveles" type="HBoxContainer" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxNivel1" type="VBoxContainer" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="ButtonNivel1" type="TextureButton" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel1"]
+self_modulate = Color(0.16595, 0.812633, 6.16074e-06, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+toggle_mode = true
+texture_normal = ExtResource("3_pefub")
+
+[node name="LabelNivel1" type="Label" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Nivel 1     "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxNivel2" type="VBoxContainer" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonNivel2" type="TextureButton" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel2"]
+self_modulate = Color(0.537255, 0.643137, 0.478431, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_pefub")
+stretch_mode = 1
+
+[node name="LabelNivel2" type="Label" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Nivel 2     "
+
+[node name="VBoxNivel3" type="VBoxContainer" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonNivel3" type="TextureButton" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel3"]
+self_modulate = Color(1, 1, 0.388235, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_pefub")
+
+[node name="LabelNivel3" type="Label" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Nivel 3     "
+
+[node name="VBoxNivel4" type="VBoxContainer" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="ButtonNivel4" type="TextureButton" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel4"]
+self_modulate = Color(1, 0.388235, 0.333333, 0.819608)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_pefub")
+
+[node name="LabelNivel4" type="Label" parent="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Nivel 4     
+"
+
+[node name="warning" type="Label" parent="Panel/VBoxTitulo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270171, 0.268891, 0.247459, 1)
+theme_override_colors/font_shadow_color = Color(0.74978, 0.74978, 0.74978, 1)
+theme_override_colors/font_outline_color = Color(0.873298, 0.873298, 0.873298, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel1/ButtonNivel1" to="." method="_on_button_nivel_1_pressed"]
+[connection signal="pressed" from="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel2/ButtonNivel2" to="." method="_on_button_nivel_2_pressed"]
+[connection signal="pressed" from="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel3/ButtonNivel3" to="." method="_on_button_nivel_3_pressed"]
+[connection signal="pressed" from="Panel/VBoxTitulo/HBoxNiveles/VBoxNiveles/HBoxNiveles/VBoxNivel4/ButtonNivel4" to="." method="_on_button_nivel_4_pressed"]
